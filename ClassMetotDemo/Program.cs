@@ -1,7 +1,8 @@
-﻿using System;
+﻿using ClassMetotDemo;
+using System;
 using System.Collections.Generic;
 
-namespace ClassMetotDemo
+namespace ClassMethodDemo
 {
     internal class Program
     {
