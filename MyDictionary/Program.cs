@@ -17,7 +17,7 @@ namespace MyDictionary
             days.Add("Cuma",5);
             days.Add("Cumartesi",6);
             days.Add("Pazar",7);
-            Console.WriteLine(days.GetValueOrDefault("Cumartesisw"));
+            Console.WriteLine(days.GetValueOrDefault("Cumartesi"));
         }
     }
 }

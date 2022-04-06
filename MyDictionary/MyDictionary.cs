@@ -32,6 +32,7 @@ namespace MyDictionaryDemo
                 _keys[i] = _tempKeys[i];
                 _values[i] = _tempValues[i];
             }
+
             _keys[_keys.Length - 1] = key;
             _values[_keys.Length - 1] = value;
         }
