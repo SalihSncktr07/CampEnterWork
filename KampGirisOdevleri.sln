@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32228.430
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDictionaryDemo", "MyDictionary\MyDictionaryDemo.csproj", "{556BD138-6C21-43EA-9D3B-EDF94F2C4CB6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassMethodDemo", "ClassMethodDemo\ClassMethodDemo.csproj", "{C0471B93-C5F9-42C5-93DD-2A1111D3441B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDemo", "GameDemo\GameDemo.csproj", "{1B203E22-B693-42A0-B2C5-8C898D037F3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{C0471B93-C5F9-42C5-93DD-2A1111D3441B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C0471B93-C5F9-42C5-93DD-2A1111D3441B}.Release|x64.ActiveCfg = Release|Any CPU
 		{C0471B93-C5F9-42C5-93DD-2A1111D3441B}.Release|x64.Build.0 = Release|Any CPU
+		{1B203E22-B693-42A0-B2C5-8C898D037F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B203E22-B693-42A0-B2C5-8C898D037F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B203E22-B693-42A0-B2C5-8C898D037F3A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1B203E22-B693-42A0-B2C5-8C898D037F3A}.Debug|x64.Build.0 = Debug|Any CPU
+		{1B203E22-B693-42A0-B2C5-8C898D037F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B203E22-B693-42A0-B2C5-8C898D037F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B203E22-B693-42A0-B2C5-8C898D037F3A}.Release|x64.ActiveCfg = Release|Any CPU
+		{1B203E22-B693-42A0-B2C5-8C898D037F3A}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
