@@ -14,7 +14,7 @@ namespace ClassMethodDemo
             Console.WriteLine("Değişiklik almamış liste");
             WriteCustomersToConsole();
 
-            _customerService.Add(new Customer { Id=4,Name="Engin",LastName="Demiroğ" });
+            _customerService.Add(new Customer { Id=1,Name="Engin",LastName="Demiroğ" });
             Console.WriteLine("\nEkleme sonrası liste");
             WriteCustomersToConsole();
 
