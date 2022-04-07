@@ -25,8 +25,8 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Delete(Sell sell)
         {
-            _sells.Remove(sell);
-
+            int index = TryGetDataIndex(sell);
+            _sells.Remove(_sells[index]);
         }
 
         public Sell Get(Expression<Func<Sell, bool>> filter)
@@ -41,11 +41,17 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Update(Sell sell)
         {
-            var result = _sells.SingleOrDefault(c => c.Id == sell.Id);
-            if (result == null) throw new Exception("Güncellenmek istenen data bulunamadı");
-
-            var index = _sells.FindIndex(s => s.Id == sell.Id);
+            int index = TryGetDataIndex(sell);
             _sells[index] = sell;
+        }
+
+        private int TryGetDataIndex(Sell sell)
+        {
+            var result = _sells.SingleOrDefault(e => e.Id == sell.Id);
+            if (result == null) throw new Exception("Üzerinde işlem yapılmak istenen data bulunamadı");
+
+            var index = _sells.FindIndex(e => e.Id == sell.Id);
+            return index;
         }
     }
 }

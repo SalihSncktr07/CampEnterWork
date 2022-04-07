@@ -25,8 +25,8 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Delete(Campaign campaign)
         {
-            _campaigns.Remove(campaign);
-
+            int index = TryGetDataIndex(campaign);
+            _campaigns.Remove(_campaigns[index]);
         }
 
         public Campaign Get(Expression<Func<Campaign, bool>> filter)
@@ -42,11 +42,17 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Update(Campaign campaign)
         {
-            var result = _campaigns.SingleOrDefault(c => c.Id == campaign.Id);
-            if (result == null) throw new Exception("Güncellenmek istenen data bulunamadı");
-
-            var index = _campaigns.FindIndex(c=>c.Id==campaign.Id);
+            int index = TryGetDataIndex(campaign);
             _campaigns[index] = campaign;
+        }
+
+        private int TryGetDataIndex(Campaign campaign)
+        {
+            var result = _campaigns.SingleOrDefault(e => e.Id == campaign.Id);
+            if (result == null) throw new Exception("Üzerinde işlem yapılmak istenen data bulunamadı");
+
+            var index = _campaigns.FindIndex(e => e.Id == campaign.Id);
+            return index;
         }
     }
 }

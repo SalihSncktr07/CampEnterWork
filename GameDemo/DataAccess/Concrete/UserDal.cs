@@ -25,8 +25,8 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Delete(User user)
         {
-            _users.Remove(user);
-
+            int index = TryGetDataIndex(user);
+            _users.Remove(_users[index]);
         }
 
         public User Get(Expression<Func<User, bool>> filter)
@@ -41,11 +41,17 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Update(User user)
         {
-            var result = _users.SingleOrDefault(c => c.Id == user.Id);
-            if (result == null) throw new Exception("Güncellenmek istenen data bulunamadı");
-
-            var index = _users.FindIndex(u=>u.Id==user.Id);
+            int index = TryGetDataIndex(user);
             _users[index] = user;
+        }
+
+        private int TryGetDataIndex(User user)
+        {
+            var result = _users.SingleOrDefault(e => e.Id == user.Id);
+            if (result == null) throw new Exception("Üzerinde işlem yapılmak istenen data bulunamadı");
+
+            var index = _users.FindIndex(e => e.Id == user.Id);
+            return index;
         }
     }
 }
