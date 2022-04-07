@@ -27,7 +27,7 @@ namespace GameDemo.Business.Concrete
         public void ApplyCampaign(Sell sell)
         {
             var campaign=_campaignDal.Get(c => c.Id == sell.CampaignId);
-            sell.Price = sell.Price * campaign.DiscountRate / 100;
+            sell.Price -= (sell.Price * campaign.DiscountRate / 100);
             Console.WriteLine("Kampanya Uygulandı");
         }
 

@@ -50,7 +50,6 @@ namespace GameDemo.Business.Concrete
         {
             _userDal.Update(user);
             Console.WriteLine("Kullanıcı Güncellendi");
-
         }
     }
 }

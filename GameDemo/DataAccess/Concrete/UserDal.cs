@@ -41,8 +41,11 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Update(User user)
         {
-            var result = _users.SingleOrDefault(u=>u.Id==user.Id);
-            result = user;
+            var result = _users.SingleOrDefault(c => c.Id == user.Id);
+            if (result == null) throw new Exception("Güncellenmek istenen data bulunamadı");
+
+            var index = _users.FindIndex(u=>u.Id==user.Id);
+            _users[index] = user;
         }
     }
 }

@@ -31,8 +31,7 @@ namespace GameDemo
             var sell = new Sell { Id = 1, UserId = 1, CampaignId = 1, Price = 100 };
             _sellService.Add(sell);
 
-            user.FirstName = "Ahmet";
-            _userService.Update(user);
+            _userService.Update(new User { Id=1,FirstName="Engin",LastName="Demiroğ",NationalityIdentity="12345678910",BirthYear="1987"});
 
             Console.WriteLine("\n-----------------------------------\n");
             Console.WriteLine("Kullanıcılar Listeleniyor...");

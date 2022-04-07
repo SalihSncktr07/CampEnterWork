@@ -41,8 +41,11 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Update(Sell sell)
         {
-            var result = _sells.SingleOrDefault(s => s.Id == sell.Id);
-            result = sell;
+            var result = _sells.SingleOrDefault(c => c.Id == sell.Id);
+            if (result == null) throw new Exception("Güncellenmek istenen data bulunamadı");
+
+            var index = _sells.FindIndex(s => s.Id == sell.Id);
+            _sells[index] = sell;
         }
     }
 }

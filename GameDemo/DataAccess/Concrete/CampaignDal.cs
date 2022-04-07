@@ -42,8 +42,11 @@ namespace GameDemo.DataAccess.Concrete
 
         public void Update(Campaign campaign)
         {
-            var result = _campaigns.SingleOrDefault(c=>c.Id==campaign.Id);
-            result = campaign;
+            var result = _campaigns.SingleOrDefault(c => c.Id == campaign.Id);
+            if (result == null) throw new Exception("Güncellenmek istenen data bulunamadı");
+
+            var index = _campaigns.FindIndex(c=>c.Id==campaign.Id);
+            _campaigns[index] = campaign;
         }
     }
 }
